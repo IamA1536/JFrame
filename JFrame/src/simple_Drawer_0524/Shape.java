@@ -9,9 +9,22 @@ public class Shape {
 	private int x1, x2, y1, y2;
 	private String str;
 	private Stroke st;
-	private Color c=Color.BLACK;
+	private Color c=Color.BLACK;//默认为黑色
 	private boolean em;
 
+	/**
+	 * 这是Shape类的构造函数
+	 * @param g 传入要在上面绘制的绘图板。
+	 * @param x1 传入绘制时的起点x坐标。
+	 * @param y1 传入绘制时的起点y坐标。
+	 * @param x2 传入绘制时的终点x坐标。
+	 * @param y2 传入绘制时的终点y坐标。
+	 * @param str 传入图形
+	 * @param c 传入颜色
+	 * @param st 传入粗细
+	 * @param em 传入是否空心
+	 */
+	
 	Shape(Graphics g, int x1, int y1, int x2, int y2, String str, Color c, Stroke st, boolean em) {
 		this.x1 = x1;
 		this.y1 = y1;
@@ -23,6 +36,11 @@ public class Shape {
 		this.em = em;
 	}
 
+	/**
+	 * 这是重绘该图形的方法，可以写在主函数的重绘方法内部。
+	 * @param g 传入要在上面绘制的绘图板。
+	 */
+	
 	public void rePaint(Graphics g) {
 		Graphics2D g2 = (Graphics2D)g;
 		g2.setStroke(st);
